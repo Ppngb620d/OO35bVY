@@ -1,0 +1,21 @@
+INHERIT: mkdocs.yml
+plugins:
+  - social: # Added to .insiders.yml
+        cards_layout_dir: layouts
+        cards_layout: custom
+  - search
+  - rss: # non-standard
+      length: 200
+  - awesome-pages # non-standard
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - git-committers: # non-standard
+      repository: Hacking-the-Cloud/hackingthe.cloud
+      branch: main
+      token: !ENV GH_TOKEN
+      docs_path: content/
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+  - glightbox: # non-standard
